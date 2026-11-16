@@ -4,7 +4,7 @@ A Universal Robots UR3 plays tic-tac-toe against a person. A webcam on the robot
 reads the board, the program decides the move, and the arm places its piece. Then the
 camera checks that the piece really landed on the right square.
 
-![The board as the wrist camera sees it](images/board_full.jpg)
+![The UR3 places its winning O while the panel shows the board read by the camera](images/robot_move.gif)
 
 ## Results
 
@@ -17,6 +17,8 @@ from the game log [`robot/ur/partidas.csv`](robot/ur/partidas.csv):
 - **About 24 s per robot move** (pick, carry, place and check).
 
 ## How it works
+
+![The board as the wrist camera sees it](images/board_full.jpg)
 
 1. **See.** The camera (Logitech C920, 1920×1080 px) finds the 3×3 grid and reads each
    square by color: orange circle = O, blue cross = X, empty. If a square is unclear, or
