@@ -1,0 +1,41 @@
+{
+  "_comment": "Settings for board_reader.py. Hue in OpenCV goes 0-179 (not 0-360). Tuned on 2026-11-10 with the 12 clean C920 photos of datasets/etiquetas_c920_2026-11-09.csv (12/12 read correctly).",
+
+  "image_size_px": [1920, 1080],
+  "_image_size_px": "Photo size (width, height) the board corners were measured at. A photo of another size gives an error instead of a wrong reading. robot_link.py asks the camera for this size by default.",
+
+  "board_corners_px": [[579, 144], [1347, 143], [1341, 903], [589, 905]],
+  "_board_corners_px": "Pixel corners of the 3x3 board in the photo, in this order: top-left, top-right, bottom-right, bottom-left. For the C920 at 1920x1080 px from the photo pose of robot/ur/posiciones.json, measured 2026-11-11 on datasets/tictactoe_c920_2026-11-11 (the 9 holes, fitted with a homography, 0.5 px error). Until 2026-11-10 they were [[579, 200], [1340, 195], [1343, 957], [584, 961]]: remounting the gripper moved the camera 53 px. Re-measure whenever the camera or the photo pose moves. null = the photo is already cropped to the board.",
+
+  "warp_size_px": 300,
+  "cell_margin": 0.15,
+  "_cell_margin": "Fraction of each square ignored on every side (0.15 = 15 %), so the grid lines and the neighbour pieces do not count.",
+
+  "blur_px": 5,
+
+  "min_brightness": 100,
+  "_min_brightness": "If the brightest 10 % of the board is darker than this (V, 0-255), every square is doubtful and the robot asks for another photo instead of reading 'empty'. Measured: photos with good light 179-229, the dark photo 13.",
+
+  "red_ranges": [
+    {"low": [0, 100, 90], "high": [22, 255, 255]},
+    {"low": [170, 100, 90], "high": [179, 255, 255]}
+  ],
+  "_red_ranges": "Colour of the O pieces. The real circles are orange (H 10-15 measured); red (H 0 and 170-179) is kept for the synthetic test images. Each range is [H, S, V].",
+
+  "blue_ranges": [
+    {"low": [88, 100, 80], "high": [115, 255, 255]}
+  ],
+  "_blue_ranges": "Colour of the X pieces: H 96-100 measured on the C920 photos.",
+
+  "min_fraction": 0.04,
+  "_min_fraction": "Minimum share of coloured pixels in a square to count a piece (0.04 = 4 %). Below it the square is empty.",
+
+  "trace_fraction": 0.01,
+  "_trace_fraction": "An empty square with at least this share of colour (1 %) is flagged as doubtful: part of a piece sits there off-centre. Clean empty squares measured 0 %.",
+
+  "piece_fraction_range": [0.06, 0.20],
+  "_piece_fraction_range": "A piece whose colour share is outside this range is flagged as doubtful: below 6 % it is off-centre, above 20 % something (a hand) is on it. Well-placed pieces measured 8.1-11.2 %.",
+
+  "ambiguous_ratio": 0.5,
+  "_ambiguous_ratio": "If the weaker colour is more than this share of the stronger one (0.5 = half), the square is flagged as doubtful."
+}

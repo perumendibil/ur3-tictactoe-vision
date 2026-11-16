@@ -1,0 +1,12 @@
+{
+  "_comment": "Example for aruco_board.py. Copy to aruco_layout.json and write the real values measured at ASSAR. All in mm, in the board's own frame: x to the right and y down as seen from the camera, origin at the top-left corner of the 3x3 grid.",
+  "_markers_mm": "Centre of each marker (by id), measured with a ruler on the board, or with the robot TCP (then x, y are the robot's, in mm). At least 4; 6 is better to spot a badly measured one.",
+  "markers_mm": {
+    "0": [-40, -40],
+    "1": [190, -40],
+    "2": [190, 190],
+    "3": [-40, 190]
+  },
+  "_board_corners_mm": "The 4 outer corners of the 3x3 grid: top-left, top-right, bottom-right, bottom-left. Used to write board_corners_px into board_config.json.",
+  "board_corners_mm": [[0, 0], [150, 0], [150, 150], [0, 150]]
+}

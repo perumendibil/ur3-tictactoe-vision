@@ -1,0 +1,36 @@
+{
+  "_comment": "Settings for robot_link.py. Change them to match the ASSAR program without touching the code.",
+
+  "role": "server",
+  "_role": "server = the robot connects to this PC (URScript socket_open(\"<PC IP>\", port)), the usual UR way. client = this PC connects to the robot or to another program.",
+  "host": "0.0.0.0",
+  "_host": "server: 0.0.0.0 listens on every network card. client: the IP of the robot or of the other program.",
+  "port": 50000,
+
+  "trigger": "GET",
+  "_trigger": "Line the robot sends to ask for a move. null = answer every line it sends.",
+  "done_words": ["DONE"],
+  "_done_words": "Lines from the robot that only say 'finished' and get no answer (they are logged).",
+
+  "terminator": "\n",
+  "templates": {
+    "move": "MOVE;{cell}",
+    "wait": "WAIT",
+    "over": "OVER;{status}",
+    "error": "ERR;{message}"
+  },
+  "_templates": "Fields: {cell} 1-9, {index} = cell_map[cell], {row} {col} 0-2, {status}, {message}, {board} (e.g. X../.O./..X), {robot}. URScript socket_read_ascii_float wants numbers in brackets, e.g. \"({index})\" or \"({index},0)\".",
+
+  "cell_map": {"1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9},
+  "_cell_map": "Our square (1-9, top-left first as seen from the camera) -> the number the robot program expects. Example for 0-8: {\"1\": 0, ..., \"9\": 8}.",
+
+  "robot": "O",
+  "first": "X",
+  "level": "hard",
+  "_level": "hard (never loses), easy (sometimes a random move) or random.",
+
+  "stable_reads": 2,
+  "stable_interval_s": 0.5,
+  "max_reads": 10,
+  "_stable_reads": "The board must read the same this many times in a row (stable_interval_s apart) before deciding, so a hand still placing a piece is not read. After max_reads without that, the answer is the error template."
+}

@@ -1,0 +1,20 @@
+n,file,board,kind,note
+1,WIN_20261109_16_50_28_Pro.jpg,.../.../...,trap,No es la pose de foto: la fila de arriba sale cortada
+2,WIN_20261109_17_36_31_Pro.jpg,.../.../...,clean,Vacío con los almacenes llenos
+3,WIN_20261109_17_38_23_Pro.jpg,..O/.X./...,clean,
+4,WIN_20261109_17_38_45_Pro.jpg,OXO/OXX/XOO,clean,Lleno (empate)
+5,WIN_20261109_17_39_11_Pro.jpg,OXO/.O./X..,trap,Una mano tapa en parte la casilla 3
+6,WIN_20261109_17_39_12_Pro.jpg,OX./.O./X..,clean,
+7,WIN_20261109_17_39_24_Pro.jpg,OX./.O./X..,trap,Una O fuera de sitio entre las casillas 6 y 9
+8,WIN_20261109_17_39_33_Pro.jpg,OX./.O./X..,trap,Una X fuera de sitio entre las casillas 4 y 7; sombra a la izquierda
+9,WIN_20261109_17_39_37_Pro.jpg,OX./.O./X..,trap,La mano tapa la casilla 1 (hay una O); una X entre las casillas 4 y 7
+10,WIN_20261109_17_39_46_Pro.jpg,OO./.XX/X.O,clean,
+11,WIN_20261109_17_39_51_Pro.jpg,.O./.XX/X.O,trap,Una O fuera de sitio en el cruce de las casillas 1 2 4 y 5
+12,WIN_20261109_17_40_05_Pro.jpg,.../.../...,clean,Vacío
+13,WIN_20261109_17_41_50_Pro.jpg,X../.../...,clean,
+14,WIN_20261109_18_25_24_Pro.jpg,.../.../...,clean,Vacío
+15,WIN_20261109_18_33_53_Pro.jpg,O../.X./..X,clean,Luz normal
+16,WIN_20261109_18_34_09_Pro.jpg,O../.X./..X,trap,Muy oscura: el naranja sale rojo
+17,WIN_20261109_18_34_24_Pro.jpg,O../.X./..X,clean,Luz normal
+18,WIN_20261109_18_34_48_Pro.jpg,O../.X./..X,clean,Luz algo más fría
+19,WIN_20261109_18_34_56_Pro.jpg,O../.X./..X,clean,Sombra en la mitad izquierda
